@@ -5,18 +5,16 @@ This is a lightweight, in-memory SQL-like database engine written in **C++**. It
 ---
 
 ## 📚 Table of Contents
-
-- [Features](#-features)
-- [How It Works](#-how-it-works)
-- [Setup & Compilation](#-setup--compilation)
-- [Limitations](#-limitations)
-- [Future Improvements](#-future-improvements)
-- [License](#-license)
+- Features
+- How It Works
+- Limitations
+- Future Improvements
+- License
+- Author
 
 ---
 
 ## ✅ Features
-
 - 🧱 Create tables with any number of columns  
 - 📝 Insert rows of string data  
 - 🔍 Select all or specific columns  
@@ -27,30 +25,16 @@ This is a lightweight, in-memory SQL-like database engine written in **C++**. It
 ---
 
 ## ⚙️ How It Works
-
 - Tables are stored in-memory using C++ `unordered_map`.  
-- Each table has:
-  - A name
-  - A list of columns (`vector<string>`)
-  - A list of rows (`vector<Row>`)
-- The engine parses commands like:
-  - `CREATE TableName col1 col2 ...`
-  - `INSERT TableName val1 val2 ...`
-  - `SELECT [cols...] TableName [WHERE col op val ...]`
-- Supports filtering using simple conditions with `=` operator.
-
----
-
-## 🛠️ Setup & Compilation
-
-### Requirements:
-- C++11 or higher  
-- GCC or compatible compiler  
-
-### Compile:
-```bash
-g++ -std=c++11 -o sql_engine main.cpp
-
+- Each table has:  
+  - A name  
+  - A list of columns (`vector<string>`)  
+  - A list of rows (`vector<Row>`)  
+- The engine parses commands like:  
+  - `CREATE TableName col1 col2 ...`  
+  - `INSERT TableName val1 val2 ...`  
+  - `SELECT [cols...] TableName [WHERE col op val ...]`  
+- Supports filtering using simple conditions with `=` operator.  
 
 ---
 
@@ -82,5 +66,3 @@ Feel free to use, modify, and distribute.
 ## 👨‍💻 Author
 Developed by **Meet Bhesara**  
 If you find this project helpful or want to contribute, feel free to fork or submit a pull request!
-
-

@@ -1,33 +1,55 @@
-# Mini SQL-like Database Engine
+# 🗄️ Simple In-Memory SQL Engine in C++
 
-A lightweight, interactive command-line C++ application that mimics basic SQL database functionalities. Supports creating tables, inserting data, and running simple SELECT queries with logical conditions—all in memory using modern C++.
+This is a lightweight, in-memory SQL-like database engine written in **C++**. It supports basic SQL operations such as creating tables, inserting data, and querying with filtering logic. Ideal for learning how SQL parsing and execution works under the hood.
 
-## Features
+---
 
-- Custom table creation (`CREATE`)
-- Row insertion (`INSERT`)
-- Data selection with column projection and conditions (`SELECT`, with AND/OR/NOT logic)
-- Modular, in-memory data storage using STL containers
-- Object-oriented, easily extensible design for learning and prototyping
+## 📚 Table of Contents
 
-## How to Run
+- [Features](#-features)
+- [How It Works](#-how-it-works)
+- [Setup & Compilation](#-setup--compilation)
+- [Usage](#-usage)
+- [Supported SQL Syntax](#-supported-sql-syntax)
+- [Example Queries](#-example-queries)
+- [Limitations](#-limitations)
+- [Future Improvements](#-future-improvements)
+- [License](#-license)
 
-1. **Clone the Repository:**
-    ```
-    git clone https://github.com/Meetbhesara/small_database_engine.git
-    cd small_database_engine
-    ```
+---
 
-2. **Compile:**
-    ```
-    g++ index.cpp -o mini_db
-    ```
+## ✅ Features
 
-3. **Run:**
-    ```
-    ./mini_db
-    ```
-    *(or `mini_db.exe` on Windows)*
+- 🧱 Create tables with any number of columns
+- 📝 Insert rows of string data
+- 🔍 Select all or specific columns
+- 🧠 Filter rows using `WHERE` clause
+- ⚙️ Logical operators supported: `AND`, `OR`, `NOT`
+- 🧪 Simple command-line interface for testing
 
-## Example Usage
+---
 
+## ⚙️ How It Works
+
+- Tables are stored in-memory using C++ `unordered_map`.
+- Each table has:
+  - A name
+  - A list of columns (`vector<string>`)
+  - A list of rows (`vector<Row>`)
+- The engine parses commands like:
+  - `CREATE TableName col1 col2 ...`
+  - `INSERT TableName val1 val2 ...`
+  - `SELECT [cols...] TableName [WHERE col op val ...]`
+- Supports filtering using simple conditions with `=` operator.
+
+---
+
+## 🛠️ Setup & Compilation
+
+### Requirements:
+- C++11 or higher
+- GCC or compatible compiler
+
+### Compile:
+```bash
+g++ -std=c++11 -o sql_engine main.cpp
